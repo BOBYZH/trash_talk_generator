@@ -1,0 +1,45 @@
+  <div class="container">
+  
+    <form method="POST" action="/">
+      <div class="section careers">
+        <h2 class="title mx-auto w-100 py-4 text-center">你想對誰說幹話？</h2>
+        <div class="row">
+
+          <div class="col-4 target-engineer">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" alt="engineer" class="career-image img-thumbnail">
+            <div class="career-option">
+              <input type="radio" name="target" value="engineer" class="career-type" {{#if (eq options.target 'engineer')}} checked {{/if}}>
+              <span>工程師</span>
+            </div>
+          </div>
+
+          <div class="col-4 target-designer">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="designer" class="career-image img-thumbnail">
+            <div class="career-option">
+              <input type="radio" name="target" value="designer" class="career-type" {{#if (eq options.target 'designer')}} checked {{/if}}>
+              <span>設計師</span>
+            </div>
+          </div>
+
+          <div class="col-4 target-entrepreneur">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg" alt="entrepreneur" class="career-image img-thumbnail">
+            <div class="career-option">
+              <input type="radio" name="target" value="entrepreneur" class="career-type" {{#if (eq options.target 'entrepreneur')}} checked {{/if}}>
+              <span>創業家</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="section trash-talk">
+        <div class="row mr-auto">
+          <div class="button col-2">
+            <button class="bg-light">產生幹話</button>
+          </div>
+          <textarea name="" id="" rows="3" class="col-10">
+            身為一個XXX，XXXX，很XX吧！
+          </textarea>
+        </div>
+      </div>
+    </form>
+  </div>

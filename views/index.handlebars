@@ -8,7 +8,7 @@
           <div class="col-4 target-engineer">
             <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" alt="engineer" class="career-image img-thumbnail">
             <div class="career-option">
-              <input type="radio" name="target" value="engineer" class="career-type" {{#if (eq options.target 'engineer')}} checked {{/if}}>
+              <input type="radio" name="target" value="engineer" class="career-type" {{#ifEquals option.target 'engineer'}} checked {{/ifEquals}}>
               <span>工程師</span>
             </div>
           </div>
@@ -16,7 +16,7 @@
           <div class="col-4 target-designer">
             <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="designer" class="career-image img-thumbnail">
             <div class="career-option">
-              <input type="radio" name="target" value="designer" class="career-type" {{#if (eq options.target 'designer')}} checked {{/if}}>
+              <input type="radio" name="target" value="designer" class="career-type" {{#ifEquals option.target 'designer'}} checked {{/ifEquals}}>
               <span>設計師</span>
             </div>
           </div>
@@ -24,7 +24,7 @@
           <div class="col-4 target-entrepreneur">
             <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg" alt="entrepreneur" class="career-image img-thumbnail">
             <div class="career-option">
-              <input type="radio" name="target" value="entrepreneur" class="career-type" {{#if (eq options.target 'entrepreneur')}} checked {{/if}}>
+              <input type="radio" name="target" value="entrepreneur" class="career-type" {{#ifEquals option.target 'entrepreneur'}} checked {{/ifEquals}}>
               <span>創業家</span>
             </div>
           </div>
@@ -37,7 +37,7 @@
             <button class="bg-light">產生幹話</button>
           </div>
           <textarea name="" id="" rows="3" class="col-10">
-            身為一個XXX，XXXX，很XX吧！
+            {{trashTalk}}
           </textarea>
         </div>
       </div>

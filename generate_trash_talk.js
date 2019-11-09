@@ -5,17 +5,17 @@ function sample(array) {
 }
 
 // define generateTrashTalk function
-function generateTrashTalk() {
+function generateTrashTalk(option) {
   // define things user might want
   const variables = require('./trash_talk_variables.json')
   
   // dummy data of req.body for test
-  const options = {
-      target: 'engineer',
-//      target: 'designer',
-//      target: 'entrepreneur'
-    }  
-//  console.log('options:', options)
+  //  const option = {
+  //      target: 'engineer',
+  //      target: 'designer',
+  //      target: 'entrepreneur'
+  //    }  
+  //  console.log('option:', options)
   
   // create a collection to store career user picked up
 　let collection = []
@@ -26,11 +26,11 @@ function generateTrashTalk() {
       collection.push(sample(career))
       collection.push(sample(variables.phrase))
     }  
-  if (options.target === 'engineer') {
+  if (option.target === 'engineer') {
     listVariables(0, variables.task.engineer)    
-  } else if (options.target === 'designer') {
+  } else if (option.target === 'designer') {
     listVariables(1, variables.task.designer) 
-  } else if (options.target === 'entrepreneur') {
+  } else if (option.target === 'entrepreneur') {
     listVariables(2, variables.task.entrepreneur) 
   } else {
     collection = ['像你一樣的網路酸民', '不找對象說幹話', '很不舒服']
@@ -42,8 +42,8 @@ function generateTrashTalk() {
   console.log('trashTalk:', trashTalk)
   return trashTalk
 }
-// invoke generateTrashTalk function 
-generateTrashTalk()
+// invoke generateTrashTalk function for test
+//generateTrashTalk()
 
 // export generatePassword function for other files to use
-//module.exports = generateTrashTalk
+module.exports = generateTrashTalk

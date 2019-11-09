@@ -1,6 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const generateTrashTalk = require('./generate_trash_talk')
+const helper = require("./handlebars_if_helper.js")
 const app = express()
 const port = 3000
 
@@ -14,9 +15,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  const options = req.body
-  const trashTalk = generateTrashTalk(options)
-  res.render('index', { trashTalk, options })
+  const option = req.body
+  console.log(option)
+  let trashTalk = generateTrashTalk(option)
+  res.render('index', { trashTalk, option })
 })
 
 app.listen(port, () => {

@@ -4,72 +4,46 @@ function sample(array) {
   return array[index]
 }
 
-// define generatePassword function
-function generatePassword(options) {
+// define generateTrashTalk function
+function generateTrashTalk() {
   // define things user might want
-  const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
-  const upperCaseLetters = lowerCaseLetters.toUpperCase()
-  const numbers = '1234567890'
-  const symbols = '`~!@$%^&*()-_+={}[]|;:"<>,.?/'
+  const variables = require('./trash_talk_variables.json')
   
-  // dummy data of req.body
-//  const options = {
-//      length: 8,
-//      lowercase: 'on',
-//      uppercase: 'on',
-//      numbers: 'on',
-//      excludeCharacters: '40'
-//    }
-//    console.log('options', options)
+  // dummy data of req.body for test
+  const options = {
+      target: 'engineer',
+//      target: 'designer',
+//      target: 'entrepreneur'
+    }  
+//  console.log('options:', options)
   
-  // create a collection to store things user picked up
+  // create a collection to store career user picked up
 　let collection = []
-  
-  if (options.lowercase === 'on') {
-      collection = collection.concat(lowerCaseLetters.split(''))
-  }
-  
-  if (options.uppercase === 'on') {
-      collection = collection.concat(upperCaseLetters.split(''))
-  }
-  
-  if (options.numbers === 'on') {
-      collection = collection.concat(numbers.split(''))
-  }
-  
-  if (options.symbols === 'on') {
-      collection = collection.concat(symbols.split(''))
-  }  
-  
-  // remove things user do not need
-  if (options.excludeCharacters) {
-//      console.log(`exclude characters: ${options.excludeCharacters}`)
-      collection = collection.filter(
-        character => !options.excludeCharacters.includes(character)
-//      collection = collection.filter(character => {
-        // if the character includes in 'excludeCharacters',
-        // return false to remove the character in teh collection
-//        if (options.excludeCharacters.includes(character) === true) {
-//          return false
-//        } else {
-//          return true
-//        }        
-//      })      
-    )
-  }
-  //  console.log('collection', collection)
-  
-  // return error notice if collection is empty
-  if (collection.length === 0) {
-      return '(There is no valid characters in your selection.)'
-  }
-  
-  // return the generated password
-//  console.log('password', password)
-    return password
+
+  // define how to get variables for trash talk
+  function listVariables(index, career) {
+      collection.push(variables.target[index])
+      collection.push(sample(career))
+      collection.push(sample(variables.phrase))
+    }  
+  if (options.target === 'engineer') {
+    listVariables(0, variables.task.engineer)    
+  } else if (options.target === 'designer') {
+    listVariables(1, variables.task.designer) 
+  } else if (options.target === 'entrepreneur') {
+    listVariables(2, variables.task.entrepreneur) 
+  } else {
+    collection = ['像你一樣的網路酸民', '不找對象說幹話', '很不舒服']
+  }    
+//  console.log('collection:', collection)
+    
+  // return the generated trash talk
+  let trashTalk = `身為一個${collection[0]}，${collection[1]}，${collection[2]}吧！`
+  console.log('trashTalk:', trashTalk)
+  return trashTalk
 }
-// invoke generatePassword function 
-//generatePassword()
+// invoke generateTrashTalk function 
+generateTrashTalk()
 
 // export generatePassword function for other files to use
-module.exports = generatePassword
+//module.exports = generateTrashTalk

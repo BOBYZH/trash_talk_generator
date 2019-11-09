@@ -33,7 +33,7 @@ function generateTrashTalk(option) {
   } else if (option.target === 'entrepreneur') {
     listVariables(2, variables.task.entrepreneur) 
   } else {
-    collection = ['像你一樣的網路酸民', '不找對象說幹話', '很不舒服']
+    collection = ['像你一樣的網路酸民', '不選對象說幹話', '很不舒服']
   }    
 //  console.log('collection:', collection)
     

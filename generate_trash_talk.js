@@ -22,10 +22,10 @@ function generateTrashTalk(option) {
 
   // define how to get variables for trash talk
   function listVariables(index, career) {
-      collection.push(variables.target[index])
-      collection.push(sample(career))
-      collection.push(sample(variables.phrase))
-    }  
+    collection.push(variables.target[index])
+    collection.push(sample(career))
+    collection.push(sample(variables.phrase))
+  }  
   if (option.target === 'engineer') {
     listVariables(0, variables.task.engineer)    
   } else if (option.target === 'designer') {

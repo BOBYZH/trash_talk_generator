@@ -1,50 +1,59 @@
-  <div class="container">
-  
-    <form method="POST" action="/"  id="form">
-      <div class="section careers">
-        <h2 class="title mx-auto w-100 py-4 text-center">你想對誰說幹話？</h2>
-        <div class="row">
+<div class="container">
 
-          <div class="col-4 target-engineer">
-            <label for="engineer">
-            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" alt="engineer" class="career-image img-thumbnail">
-            </label>            
-            <div class="career-option">
-              <input type="radio" name="target" value="engineer" class="career-type" id="engineer" {{#ifEquals option.target 'engineer'}} checked {{/ifEquals}}>
-              <label for="engineer">工程師</label>
-            </div>
+  <form method="POST" action="/" id="form">
+    <div class="section careers">
+      <h2 class="title mx-auto w-100 py-4 text-center">你想對誰說幹話？</h2>
+      <div class="row">
+
+        <div class="col-4 target-engineer">
+          <label for="engineer">
+            <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+              alt="engineer" class="career-image img-thumbnail">
+          </label>
+          <div class="career-option">
+            <input type="radio" name="target" value="engineer" class="career-type" id="engineer"
+              {{#ifEquals option.target 'engineer'}} checked {{/ifEquals}}>
+            <label for="engineer">工程師</label>
           </div>
-
-          <div class="col-4 target-designer">
-             <label for="designer" class="pl-3">
-             <img style="width: 87%; height: 87%;" src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="designer" class="career-image img-thumbnail">
-             </label>
-            <div class="career-option">
-              <input type="radio" name="target" value="designer" class="career-type" id="designer" {{#ifEquals option.target 'designer'}} checked {{/ifEquals}}>
-              <label for="designer">設計師</label>
-            </div>
-          </div>
-
-          <div class="col-4 target-entrepreneur">
-            <label for="entrepreneur">
-            <img style="width: 90%; height: 90%;" src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg" alt="entrepreneur" class="career-image img-thumbnail">
-            </label>
-            <div class="career-option">
-              <input type="radio" name="target" value="entrepreneur" class="career-type" id="entrepreneur" {{#ifEquals option.target 'entrepreneur'}} checked {{/ifEquals}}>
-              <label for="entrepreneur">創業家</label>
-            </div>
-          </div>
-
         </div>
-      </div>
-      <div class="section trash-talk">
-        <div class="row mr-auto">
-          <div class="button col-2">
-            <button class="bg-light mb-5" type="submit" form="form">產生幹話</button>
-            {{#if trashTalk}}<button class="bg-light" type="button" onclick="copyText()">複製幹話</button>{{/if}}
+
+        <div class="col-4 target-designer">
+          <label for="designer" class="pl-3">
+            <img style="width: 87%; height: 87%;"
+              src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" alt="designer"
+              class="career-image img-thumbnail">
+          </label>
+          <div class="career-option">
+            <input type="radio" name="target" value="designer" class="career-type" id="designer"
+              {{#ifEquals option.target 'designer'}} checked {{/ifEquals}}>
+            <label for="designer">設計師</label>
           </div>
-          <textarea style="font-size:21px; width: 80%;" rows="3" id="trashTalkOutput" placeholder="嫌話不夠幹，可以自己改！">{{#if trashTalk}}{{trashTalk}}{{/if}}</textarea>
         </div>
+
+        <div class="col-4 target-entrepreneur">
+          <label for="entrepreneur">
+            <img style="width: 90%; height: 90%;"
+              src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+              alt="entrepreneur" class="career-image img-thumbnail">
+          </label>
+          <div class="career-option">
+            <input type="radio" name="target" value="entrepreneur" class="career-type" id="entrepreneur"
+              {{#ifEquals option.target 'entrepreneur'}} checked {{/ifEquals}}>
+            <label for="entrepreneur">創業家</label>
+          </div>
+        </div>
+
       </div>
-    </form>
-  </div>
+    </div>
+    <div class="section trash-talk">
+      <div class="row mr-auto">
+        <div class="button col-2">
+          <button class="bg-light mb-5" type="submit" form="form">產生幹話</button>
+          {{#if trashTalk}}<button class="bg-light" type="button" onclick="copyText()">複製幹話</button>{{/if}}
+        </div>
+        <textarea style="font-size:21px; width: 80%;" rows="3" id="trashTalkOutput"
+          placeholder="嫌話不夠幹，可以自己改！">{{#if trashTalk}}{{trashTalk}}{{/if}}</textarea>
+      </div>
+    </div>
+  </form>
+</div>

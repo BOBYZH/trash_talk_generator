@@ -16,7 +16,7 @@ npm i express express-handlebars
 ```
 4. 執行本專案：
 ```
-npm run dev
+npm run start
 ```
 5. 開啟預覽連結
 - 若是在本機操作，於瀏覽器網址列輸入[http://localhost:3000](http://localhost:3000)；

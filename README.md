@@ -10,6 +10,9 @@ ALPHA Camp 學期三作業2: 幹話產生器
 0. 至少先在電腦上裝好Node.js
 1. 從本專案頁面將檔案下載，或複製(clone)到要操作的電腦上
 2. 使用終端機(terminal)，將目錄切換至專案資料夾(trash_talk_generator)
+```
+cd trash_talk_generator
+```
 3. 使用npm安裝需要的套件：
 ```
 npm i express express-handlebars
@@ -17,6 +20,7 @@ npm i express express-handlebars
 4. 執行本專案：
 ```
 npm run start
+#需編輯原始碼的話建議在全域環境安裝nodemon，以使用： npm run dev
 ```
 5. 開啟預覽連結
 - 若是在本機操作，於瀏覽器網址列輸入[http://localhost:3000](http://localhost:3000)；
@@ -26,5 +30,3 @@ npm run start
 1. 從工程師、設計師、創業家三種職業，選一種對象說幹話(可點選圖片或文字標籤來選擇)
 2. 每按一次「產生幹話」按鈕，會針對該職業產生不同的幹話(沒選對象的話會有彩蛋！)
 3. 產生幹話後可以手動修改，也會出現「複製幹話」按鈕，點擊自動複製到系統剪貼簿方便分享(1.1版新增)
-
-
